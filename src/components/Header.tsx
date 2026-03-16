@@ -1,45 +1,95 @@
-import { ShoppingCart } from 'lucide-react';
+import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { ShoppingCart, Menu, X } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { Button } from '@/components/ui/button';
+import { Logo } from '@/components/Logo';
+
+const navLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'Shop', path: '/shop' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+];
 
 export function Header() {
   const { totalItems, setIsCartOpen } = useCart();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <h1 className="font-display text-2xl md:text-3xl font-bold text-foreground">
-            Kente<span className="text-primary">Palace</span>
-          </h1>
-        </div>
-        
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="#shop" className="text-muted-foreground hover:text-foreground transition-colors">
-            Shop
-          </a>
-          <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
-            About
-          </a>
-          <a href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
-            Contact
-          </a>
-        </nav>
+    <>
+      <div className="kente-stripe" />
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+        <div className="container mx-auto px-4 py-3 flex items-center justify-between">
+          <Logo />
 
-        <Button
-          variant="outline"
-          size="icon"
-          className="relative border-primary/30 hover:bg-primary/10"
-          onClick={() => setIsCartOpen(true)}
-        >
-          <ShoppingCart className="h-5 w-5 text-foreground" />
-          {totalItems > 0 && (
-            <span className="absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
-              {totalItems}
-            </span>
-          )}
-        </Button>
-      </div>
-    </header>
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-sm font-medium tracking-wide uppercase transition-colors hover:text-primary ${
+                  location.pathname === link.path
+                    ? 'text-primary'
+                    : 'text-muted-foreground'
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="relative hover:bg-primary/10"
+              onClick={() => setIsCartOpen(true)}
+            >
+              <ShoppingCart className="h-5 w-5 text-foreground" />
+              {totalItems > 0 && (
+                <span className="absolute -top-1 -right-1 bg-primary text-primary-foreground text-[10px] font-bold rounded-full h-5 w-5 flex items-center justify-center">
+                  {totalItems}
+                </span>
+              )}
+            </Button>
+
+            {/* Mobile menu toggle */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden hover:bg-primary/10"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </Button>
+          </div>
+        </div>
+
+        {/* Mobile nav */}
+        {mobileOpen && (
+          <div className="md:hidden border-t border-border bg-background animate-fade-in">
+            <nav className="container mx-auto px-4 py-4 flex flex-col gap-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-sm font-medium tracking-wide uppercase py-2 transition-colors hover:text-primary ${
+                    location.pathname === link.path
+                      ? 'text-primary'
+                      : 'text-muted-foreground'
+                  }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+      </header>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
-import { products } from '@/data/products';
+import { motion } from 'framer-motion';
+import { localProducts } from '@/data/products';
 import { Category } from '@/types/product';
 import { CategoryFilter } from './CategoryFilter';
 import { ProductCard } from './ProductCard';
@@ -8,36 +9,47 @@ export function ProductGrid() {
   const [selectedCategory, setSelectedCategory] = useState<Category>('all');
 
   const filteredProducts = useMemo(() => {
-    if (selectedCategory === 'all') return products;
-    return products.filter((product) => product.category === selectedCategory);
+    if (selectedCategory === 'all') return localProducts;
+    return localProducts.filter((product) => product.category === selectedCategory);
   }, [selectedCategory]);
 
   return (
-    <section id="shop" className="py-16 bg-background">
+    <section className="py-20 kente-pattern-bg">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <p className="text-primary text-sm tracking-[0.3em] uppercase mb-3 font-sans">
+            Browse Our Store
+          </p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our Collection
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-2">
             Browse our exquisite selection of authentic Ghanaian kente cloth. Each piece is handcrafted by skilled artisans.
           </p>
-        </div>
+          <div className="w-20 h-[2px] bg-primary mx-auto mt-4" />
+        </motion.div>
 
         <CategoryFilter
           selectedCategory={selectedCategory}
           onCategoryChange={setSelectedCategory}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product, index) => (
-            <div
+            <motion.div
               key={product.id}
-              className="animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
             >
               <ProductCard product={product} />
-            </div>
+            </motion.div>
           ))}
         </div>
 
