@@ -1,23 +1,18 @@
-import { CartProvider } from '@/context/CartContext';
-import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
-import { ProductGrid } from '@/components/ProductGrid';
-import { CartDrawer } from '@/components/CartDrawer';
-import { Footer } from '@/components/Footer';
+import { FeaturedCollection } from '@/components/FeaturedCollection';
+import { WhyChooseUs } from '@/components/WhyChooseUs';
+import { Testimonials } from '@/components/Testimonials';
+import { Newsletter } from '@/components/Newsletter';
 
 const Index = () => {
   return (
-    <CartProvider>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <main>
-          <Hero />
-          <ProductGrid />
-        </main>
-        <Footer />
-        <CartDrawer />
-      </div>
-    </CartProvider>
+    <main>
+      <Hero />
+      <FeaturedCollection />
+      <WhyChooseUs />
+      <Testimonials />
+      <Newsletter />
+    </main>
   );
 };
 

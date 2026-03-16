@@ -22,8 +22,8 @@ export function CategoryFilter({ selectedCategory, onCategoryChange }: CategoryF
           variant={selectedCategory === category.value ? 'default' : 'outline'}
           className={
             selectedCategory === category.value
-              ? 'bg-primary text-primary-foreground hover:bg-primary/90'
-              : 'border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary'
+              ? 'bg-primary text-primary-foreground hover:bg-primary/90 tracking-wide'
+              : 'border-border text-muted-foreground hover:bg-primary/10 hover:text-foreground hover:border-primary/40 tracking-wide'
           }
           onClick={() => onCategoryChange(category.value)}
         >
