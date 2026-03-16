@@ -4,6 +4,36 @@ import kenteFemale1 from '@/assets/kente-female-1.jpg';
 import kenteFemale2 from '@/assets/kente-female-2.jpg';
 import kenteUnisex1 from '@/assets/kente-unisex-1.jpg';
 import kenteUnisex2 from '@/assets/kente-unisex-2.jpg';
+import kenteUnisex2 from '@/assets/kente-unisex-2.jpg';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+import kenteUnisex2 from '@/assets/';
+
 
 export interface LocalProduct {
   id: string;
