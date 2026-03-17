@@ -23,7 +23,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <HashRouter>
         <CartProvider>
           <div className="min-h-screen bg-background flex flex-col">
             <Header />
