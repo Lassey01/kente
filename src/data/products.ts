@@ -147,8 +147,7 @@ export const localProducts: LocalProduct[] = [
     category: 'unisex',
     description: 'Royal blue and gold unisex kente. A perfect blend of tradition and modern style.',
     created: Date.now(),
-    ];
-    export const localProducts: LocalProduct[] = [
+  },
   // ===== Female Kente (43 items) =====
   { id: 'f3', name: 'Royal Fusion Kente', price: 250, img: kenteFemale3, category: 'female', description: 'Blend of traditional and contemporary design with pink and orange highlights.', created: Date.now() },
   { id: 'f4', name: 'Majestic Threads Kente', price: 270, img: kenteFemale4, category: 'female', description: 'Elegant weaving with golden highlights and subtle red accents.', created: Date.now() },
