@@ -43,7 +43,7 @@ const App = () => (
             <CartDrawer />
           </div>
         </CartProvider>
-      </BrowserRouter>
+      </HashRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
