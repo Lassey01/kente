@@ -19,23 +19,15 @@ export function CartDrawer() {
   const handleWhatsAppCheckout = () => {
     if (items.length === 0) return;
 
-    const orderItems = items
-      .map(
-        (item, i) =>
-          `${i + 1}. ${item.name} (x${item.quantity}) - GH₵${item.price * item.quantity}`
-      )
-      .join('\n');
+    let msg = "Hello, I want to order the following Kente items:%0A%0A";
+    let total = 0;
+    items.forEach((item, i) => {
+      msg += `${i + 1}. ${item.name} x${item.quantity} - GHS ${item.price * item.quantity}%0A`;
+      total += item.price * item.quantity;
+    });
+    msg += `%0ATotal: GHS ${total}`;
 
-    const message = `Hello, I want to order the following Kente items:\n\n${orderItems}\n\nTotal: GH₵${totalPrice}\n\nPlease confirm this order.`;
-
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappNumber = '233260920305';
-
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodedMessage}`,
-      '_blank'
-    );
-
+    window.open(`https://wa.me/233260920305?text=${msg}`);
     clearCart();
     setIsCartOpen(false);
   };

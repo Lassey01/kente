@@ -25,19 +25,22 @@ const Checkout = () => {
   const handleWhatsAppOrder = () => {
     if (items.length === 0) return;
 
-    const orderItems = items
-      .map(
-        (item, i) =>
-          `${i + 1}. ${item.name} (x${item.quantity}) - GH₵${item.price * item.quantity}`
-      )
-      .join('\n');
+    let msg = "Hello, I want to order the following Kente items:%0A%0A";
+    let total = 0;
+    items.forEach((item, i) => {
+      msg += `${i + 1}. ${item.name} x${item.quantity} - GHS ${item.price * item.quantity}%0A`;
+      total += item.price * item.quantity;
+    });
+    msg += `%0ATotal: GHS ${total}`;
 
-    const customerInfo = form.name ? `\n\n*Customer Details:*\nName: ${form.name}\nPhone: ${form.phone}\nAddress: ${form.address}${form.notes ? `\nNotes: ${form.notes}` : ''}` : '';
+    if (form.name) {
+      msg += `%0A%0A*Customer Details:*%0AName: ${form.name}%0APhone: ${form.phone}%0AAddress: ${form.address}`;
+      if (form.notes) msg += `%0ANotes: ${form.notes}`;
+    }
 
-    const message = `Hello, I want to order the following Kente items:\n\n${orderItems}\n\nTotal: GH₵${totalPrice}${customerInfo}\n\nPlease confirm this order.`;
+    msg += `%0A%0APlease confirm this order.`;
 
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/233260920305?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/233260920305?text=${msg}`);
     clearCart();
   };
 

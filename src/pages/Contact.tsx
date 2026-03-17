@@ -18,8 +18,8 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Send via WhatsApp
-    const message = `*Contact Form - Obaatanpa Kente Hub*\n\nName: ${form.name}\nEmail: ${form.email}\nMessage: ${form.message}`;
-    window.open(`https://wa.me/233260920305?text=${encodeURIComponent(message)}`, '_blank');
+    const msg = `*Contact Form - Obaatanpa Kente Hub*%0A%0AName: ${form.name}%0AEmail: ${form.email}%0AMessage: ${form.message}`;
+    window.open(`https://wa.me/233260920305?text=${msg}`);
     toast({ title: 'Message sent!', description: 'We will get back to you soon.' });
     setForm({ name: '', email: '', message: '' });
   };
