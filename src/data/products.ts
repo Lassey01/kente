@@ -135,7 +135,7 @@ export interface LocalProduct {
   { id: 'f40', name: 'Golden Queen Kente', price: 2600, img: kenteFemale40, category: 'female', description: 'Gold and pink stripes woven elegantly for queens.', created: Date.now() },
   { id: 'f41', name: 'Queen’s Harmony Kente', price: 2800, img: kenteFemale41, category: 'female', description: 'Pastel and gold combination with traditional patterns.', created: Date.now() },
   { id: 'f42', name: 'Royal Elegance Kente', price: 2700, img: kenteFemale42, category: 'female', description: 'Classic red and black stripes with subtle gold highlights.', created: Date.now() },
-  { id: 'f43', name: 'Golden Heritage Kente', price: 2600, img: kenteFemale43, category: 'female', description: 'Traditional Ashanti-inspired design with gold accents.', created: Date.now() },
+  { id: 'f43', name: 'Golden Heritage Kente', price: 2500, img: kenteFemale43, category: 'female', description: 'Traditional Ashanti-inspired design with gold accents.', created: Date.now() },
 
   // ===== Male Kente (20 items) =====
  
