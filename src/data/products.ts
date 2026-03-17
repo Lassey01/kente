@@ -93,61 +93,7 @@ export interface LocalProduct {
   description: string;
 }
 
-export const localProducts: LocalProduct[] = [
-  {
-    id: 'f1',
-    name: 'Queens Elegance Kente',
-    price: 280,
-    img: kenteFemale1,
-    category: 'female',
-    description: 'Beautiful red and gold kente design crafted for the modern African queen. Lightweight and elegant.',
-    created: Date.now(),
-  },
-  {
-    id: 'f2',
-    name: 'Nana Yaa Collection',
-    price: 350,
-    img: kenteFemale2,
-    category: 'female',
-    description: 'Exquisite feminine kente with delicate pink and gold patterns. Perfect for weddings and celebrations.',
-    created: Date.now(),
-  },
-  {
-    id: 'm1',
-    name: 'Royal Adinkra Kente',
-    price: 250,
-    img: kenteMale1,
-    category: 'male',
-    description: 'Traditional hand-woven kente with bold green and gold patterns. Perfect for ceremonies and special occasions.',
-    created: Date.now(),
-  },
-  {
-    id: 'm2',
-    name: 'Kings Pride Kente',
-    price: 320,
-    img: kenteMale2,
-    category: 'male',
-    description: 'Premium quality kente cloth featuring deep green and red stripes. A symbol of royalty and prestige.',
-    created: Date.now(),
-  },
-  {
-    id: 'u1',
-    name: 'Heritage Gold Kente',
-    price: 200,
-    img: kenteUnisex1,
-    category: 'unisex',
-    description: 'Classic gold and black kente pattern suitable for all. Versatile design for any occasion.',
-    created: Date.now(),
-  },
-  {
-    id: 'u2',
-    name: 'Unity Kente',
-    price: 275,
-    img: kenteUnisex2,
-    category: 'unisex',
-    description: 'Royal blue and gold unisex kente. A perfect blend of tradition and modern style.',
-    created: Date.now(),
-  },
+
   // ===== Female Kente (43 items) =====
   { id: 'f3', name: 'Royal Fusion Kente', price: 2500, img: kenteFemale3, category: 'female', description: 'Blend of traditional and contemporary design with pink and orange highlights.', created: Date.now() },
   { id: 'f4', name: 'Majestic Threads Kente', price: 2700, img: kenteFemale4, category: 'female', description: 'Elegant weaving with golden highlights and subtle red accents.', created: Date.now() },
