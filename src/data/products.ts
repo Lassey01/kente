@@ -158,7 +158,7 @@ export interface LocalProduct {
   { id: 'm19', name: 'Monarch Fusion Kente', price: 3200, img: kenteMale19, category: 'male', description: 'Bold and elegant design with traditional Ghanaian motifs.', created: Date.now() },
   { id: 'm20', name: 'Kings Glory Kente', price: 2800, img: kenteMale20, category: 'male', description: 'Red, black, and gold stripes with a royal touch.', created: Date.now() },
 
-  // ===== Unisex Kente (20 items) =====
+  // ===== Unisex Kentes (20 items) =====
  
   { id: 'u3', name: 'Vibrance Kente', price: 2500, img: kenteUnisex3, category: 'unisex', description: 'Lively mix of colors and stripes for casual or formal wear.', created: Date.now() },
   { id: 'u4', name: 'Fusion Threads Kente', price: 2600, img: kenteUnisex4, category: 'unisex', description: 'Modern geometric patterns combined with traditional hues.', created: Date.now() },
