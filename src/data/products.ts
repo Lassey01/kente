@@ -93,7 +93,7 @@ export interface LocalProduct {
   description: string;
 }
 
-
+export const products: LocalProduct[] = [
   // ===== Female Kente (43 items) =====
   { id: 'f3', name: 'Royal Fusion Kente', price: 2500, img: kenteFemale3, category: 'female', description: 'Blend of traditional and contemporary design with pink and orange highlights.', created: Date.now() },
   { id: 'f4', name: 'Majestic Threads Kente', price: 2700, img: kenteFemale4, category: 'female', description: 'Elegant weaving with golden highlights and subtle red accents.', created: Date.now() },
