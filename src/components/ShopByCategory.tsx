@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import categoryMale from '@/assets/kente-male-1.jpg';
+import categoryMale from '@/assets/category-male.jpg';
 import categoryFemale from '@/assets/kente-female-1.jpg';
 import categoryUnisex from '@/assets/category-unisex.jpg';
 
