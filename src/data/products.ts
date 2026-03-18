@@ -93,7 +93,7 @@ export interface LocalProduct {
   description: string;
 }
 
-
+export const products: LocalProduct[] = [
   // ===== Female Kente (43 items) =====
   { id: 'f3', name: 'Royal Fusion Kente', price: 2500, img: kenteFemale3, category: 'female', description: 'Blend of traditional and contemporary design with pink and orange highlights.', created: Date.now() },
   { id: 'f4', name: 'Majestic Threads Kente', price: 2700, img: kenteFemale4, category: 'female', description: 'Elegant weaving with golden highlights and subtle red accents.', created: Date.now() },
@@ -179,3 +179,5 @@ export interface LocalProduct {
   { id: 'u19', name: 'Unity Glow Kente', price: 2600, img: kenteUnisex19, category: 'unisex', description: 'Blend of warm and gold stripes for casual or formal wear.', created: Date.now() },
   { id: 'u20', name: 'Royal Threads Kente', price: 2400, img: kenteUnisex20, category: 'unisex', description: 'Elegant unisex pattern with vibrant and gold highlights.', created: Date.now() },
 ];
+
+export const localProducts = products;
