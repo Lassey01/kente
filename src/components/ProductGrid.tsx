@@ -1,4 +1,5 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { localProducts } from '@/data/products';
 import { Category } from '@/types/product';
@@ -6,7 +7,15 @@ import { CategoryFilter } from './CategoryFilter';
 import { ProductCard } from './ProductCard';
 
 export function ProductGrid() {
-  const [selectedCategory, setSelectedCategory] = useState<Category>('all');
+  const [searchParams] = useSearchParams();
+  const categoryParam = searchParams.get('category') as Category | null;
+  const [selectedCategory, setSelectedCategory] = useState<Category>(categoryParam || 'all');
+
+  useEffect(() => {
+    if (categoryParam && ['male', 'female', 'unisex'].includes(categoryParam)) {
+      setSelectedCategory(categoryParam);
+    }
+  }, [categoryParam]);
 
   const filteredProducts = useMemo(() => {
     if (selectedCategory === 'all') return localProducts;
