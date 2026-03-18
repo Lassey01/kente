@@ -179,3 +179,5 @@ export const products: LocalProduct[] = [
   { id: 'u19', name: 'Unity Glow Kente', price: 2600, img: kenteUnisex19, category: 'unisex', description: 'Blend of warm and gold stripes for casual or formal wear.', created: Date.now() },
   { id: 'u20', name: 'Royal Threads Kente', price: 2400, img: kenteUnisex20, category: 'unisex', description: 'Elegant unisex pattern with vibrant and gold highlights.', created: Date.now() },
 ];
+
+export const localProducts = products;
